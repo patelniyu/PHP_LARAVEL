@@ -5,7 +5,7 @@
        
        if(!$_SESSION['Email'])
        {
-           header("Location:login.php");
+           header("Location:index.php");
        }
        //print_r($_SESSION);
 ?>

@@ -20,31 +20,31 @@
         </div><br>
  
         <div> 
-            <label>Firstname</label>
+            <lable>Firstname</lable>
             <input type="text" placeholder="Firstname" name="Fname" value="<?php echo $row['Fname']?>">
         </div><br>
            
         <div> 
-            <label>Lastname</label>
+            <lable>Lastname</lable>
             <input type="text" placeholder="Lastname" name="Lname" value="<?php echo $row['Lname']?>">
         </div><br>
             
         <div>
-            <label>Email</label>
+            <lable>Email</lable>
             <input type="text" placeholder="Email" name="Email" value="<?php echo $row['Email']?>">
         </div><br>
              
         <div>
-            <label>Password</label>
+            <lable>Password</lable>
             <input type="password" placeholder="Password" name="Password" value="<?php echo $row['Password']?>">
         </div><br>
             
         <div>
-            <label> Enter your Address:<input type="text" name="Address" value="<?php echo $row['Address']?>"><br>  
-        </div></label><br> 
+            <lable> Enter your Address:<input type="text" name="Address" value="<?php echo $row['Address']?>"><br>  
+        </div></lable><br> 
     
         <div>                    
-            <label>Designation: </label>
+            <lable>Designation: </lable>
             <select name="Designation">
             <option value="">select </option>
             <option value="Project Manager" <?php if($row['Designation']=="Project Manager"){echo "selected";}?> >Project Manager</option>
@@ -60,6 +60,12 @@
             <input type="radio" name="Gender" value="0" <?php if($row['Gender']=="0"){ echo "checked='checked'";}else{echo "checked='checked'";} ?>> Male          
             <input type="radio" name="Gender" value="1" <?php if($row['Gender']=="1"){ echo "checked='checked'";}else{echo "checked='checked'";} ?>> Female 
         </div><br>
+
+        <div>
+            <label> File:</lable>
+            <input type="file" name="filetoupload" class="form-control"  value="<?php echo $file;?>">
+            <p><file scr="uploads/<?php echo $file; ?>"></p>
+        </div>
 
         <button type="submit" name="update" class="btn btn-primary " >Update</button></td>
         		
