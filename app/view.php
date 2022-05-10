@@ -14,7 +14,7 @@
         <title>Form Details</title>
     </head>
     <body>
-        <form method="POST" name="frm">
+        <center><form method="POST" name="frm">
    	    <h2>Form Details</h2>
         <table id="table" border=2>
                      
@@ -55,7 +55,8 @@
                 
 
                 <td> <button type="submit" name="delete"  onclick="deleteRecord('<?php echo $rowq['id'];?>')" >Delete</button>
-                <a href="edit.php?id1=<?php echo $rowq['id'];?>">Update </a></td>
+                <a href="edit.php?id1=<?php echo $rowq['id'];?>">Update </a>
+                <input type=button onClick="parent.location='edit.php'" value='Update'></td>
                                                      
             <?php
                 }
@@ -95,7 +96,8 @@
             </script>	
     
         </table>
-        </form>
+        </form></center>
+        <center><a href="logout.php">Log Out</a></center>
     </body>
 </html>     
                      

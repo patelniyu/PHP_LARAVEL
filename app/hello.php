@@ -1,78 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-}
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
-
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-</style>
-</head>
-<body>
-
-<video autoplay muted loop id="myVideo">
-  <source src="C:\Users\Niyati.Patel\Downloads\v1.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
-
-<div class="content">
-  <h1>Heading</h1>
-  <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
-  <button id="myBtn" onclick="myFunction()">Pause</button>
-</div>
-
-<script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
-
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
-</script>
-
-</body>
-</html>
+<div class="row" style="margin-top: 5rem;">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Crud app</h2>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Fname</th>
+            <th>Lname</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Designation</th>
+            <th>Gender</th>
+            <th>File</th>
+            <th>Hobbie</th>
+            
+            <th width="280px">Action</th>
+        </tr>
+        @foreach ($data as $key => $value)
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $value->fname }}</td>
+            <td>{{ $value->lname }}</td>
+            <td>{{ $value->email }}</td>
+            <td>{{ $value->designation }}</td>
+            <td>{{ $value->gender }}</td>
+            
+            <td>
+                <form action="{{ route('students.destroy',$value->id) }}" method="POST">   
+                    <a class="btn btn-info" href="{{ route('students.show',$value->id) }}">Show</a>    
+                    <a class="btn btn-primary" href="{{ route('students.edit',$value->id) }}">Edit</a>   
+                    @csrf
+                    @method('DELETE')      
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>  

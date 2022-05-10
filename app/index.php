@@ -1,14 +1,21 @@
-
+<?php
+    session_start();
+    if($_SESSION['Email'])
+    {
+        header("Location:view.php");
+    }
+?>
 <html>
     <head>
         <title>Log In Form</title>
 		<link rel="stylesheet" href="style.css">
+    </head>
     <body>
         <form method="POST" enctype="multipart/form-data">
         <?php
             include 'connection.php';
             if(!isset($_SESSION)) 
-            {
+            {  
                 session_start(); 
             } 
             if(isset($_REQUEST)&& count($_REQUEST)>0)

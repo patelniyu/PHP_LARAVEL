@@ -346,14 +346,13 @@ $(document).ready(function()
     						echo "Sorry, there was an error uploading your file.";
   						}
 					}
-												
 					$sql="insert into students(Fname,Lname,Email,Password,Address,Designation,Gender,file,Hobbie)values('$Fname','$Lname','$Email','$Password','$Address','$Designation','$Gender','$file','$Hobbie')";
         			$r=mysqli_query($conn,$sql);
 	
         			if($r>=1)
         			{
             			echo "<script>
-            			window.location.href='login.php'</script>";
+            			window.location.href='index.php'</script>";
         			}
         			else
         			{
