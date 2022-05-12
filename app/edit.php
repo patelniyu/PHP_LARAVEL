@@ -11,6 +11,7 @@
     <head>
         <title>Update Form</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
     </head>
     <body>
     <form method="get" action="update.php">
@@ -21,31 +22,31 @@
  
         <div> 
             <lable>Firstname</lable>
-            <input type="text" placeholder="Firstname" name="Fname" value="<?php echo $row['Fname']?>">
+            <input type="text" placeholder="Firstname" name="Fname" value="<?php echo $row['Fname']?>" required="" id="Fname">
         </div><br>
            
         <div> 
             <lable>Lastname</lable>
-            <input type="text" placeholder="Lastname" name="Lname" value="<?php echo $row['Lname']?>">
+            <input type="text" placeholder="Lastname" name="Lname" value="<?php echo $row['Lname']?>" required="" id="Lname">
         </div><br>
             
         <div>
             <lable>Email</lable>
-            <input type="text" placeholder="Email" name="Email" value="<?php echo $row['Email']?>">
+            <input type="text" placeholder="Email" name="Email" value="<?php echo $row['Email']?>" required="" id="Email">
         </div><br>
              
         <div>
             <lable>Password</lable>
-            <input type="password" placeholder="Password" name="Password" value="<?php echo $row['Password']?>">
+            <input type="password" placeholder="Password" name="Password" value="<?php echo $row['Password']?>" required="" id="Password">
         </div><br>
             
         <div>
-            <lable> Enter your Address:<input type="text" name="Address" value="<?php echo $row['Address']?>"><br>  
+            <lable> Enter your Address:<input type="text" name="Address" value="<?php echo $row['Address']?>" required="" id="Address"><br>  
         </div></lable><br> 
     
         <div>                    
             <lable>Designation: </lable>
-            <select name="Designation">
+            <select name="Designation" required="" id="Fname">
             <option value="">select </option>
             <option value="Project Manager" <?php if($row['Designation']=="Project Manager"){echo "selected";}?> >Project Manager</option>
             <option value="Jr. Developer" <?php if($row['Designation']=="Jr. Developer"){echo "selected";}?> >Jr. Developer </option>
@@ -70,5 +71,6 @@
         <button type="submit" name="update" class="btn btn-primary " >Update</button></td>
         		
     </form>
+    <script src="script.js"></script>
     </body>
 </html>

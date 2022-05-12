@@ -29,7 +29,6 @@
                 <th>Gender</th>             
                 <th>Files</th>
                 <th>Hobbie</th>
-               
                 <th>Operation</th>  
             </tr>
                      
@@ -55,8 +54,7 @@
                 
 
                 <td> <button type="submit" name="delete"  onclick="deleteRecord('<?php echo $rowq['id'];?>')" >Delete</button>
-                <a href="edit.php?id1=<?php echo $rowq['id'];?>">Update </a>
-                <input type=button onClick="parent.location='edit.php'" value='Update'></td>
+                <a href="edit.php?id1=<?php echo $rowq['id'];?>">Update </a></td>
                                                      
             <?php
                 }

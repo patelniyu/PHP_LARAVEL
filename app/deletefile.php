@@ -1,9 +1,25 @@
 <?php
-$target_dir = "uploads/";
-//$filename = 'readme.txt';
+	include('connection.php');
+	if(isset($_REQUEST["file"])){
+		// Get parameters
+		$file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
 
-if (unlink($target_dir)) {
-	echo 'The file ' .$target_dir . ' was deleted successfully!';
-} else {
-	echo 'There was a error deleting the file ' . $target_dir;
-}
+		/* Test whether the file name contains illegal characters
+		such as "../" using the regular expression */
+			$filename = "uploads/" . $file;
+
+			//$filename = 'readme.pdf';
+
+		if(file_exists($filename))  
+		{
+		if(unlink($filename))
+		{
+			echo "file named $file has been deleted successfully";
+		}
+		else
+		{
+			echo "file is not deleted";
+		}
+		}
+	}
+?>

@@ -5,7 +5,7 @@
     <body>
         <?php
             include('connection.php');
-
+            include('deletefile.php');
             $id = $_GET['id'];
             echo $id;
             $result = mysqli_query($conn, "DELETE FROM students WHERE id=$id");

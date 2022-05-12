@@ -2,289 +2,9 @@
     <head>
         <title>Registration Form</title>
 		<link rel="stylesheet" href="style.css">
-		<linl rel="javascript" href="script.js">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 		
-		<script type="text/javascript">
-			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 
-
-//Reg Ex Declaration - Globaly.
-var $FNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
-var $LNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
-var $EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/i;
-var $PasswordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,12}$/;
-
-var TxtFirstnameFlag=false,
-    TxtLastnameFlag=false,
-    TxtEmailIdFlag=false,
-    TxtPasswordFlag=false,
-    TxtAddressFlag=false,
-    TxtDesignationFlag=false,
-    TxtGenderFlag=false,
-    TxtFileFlag=false;
-
-$(document).ready(function() 
-{
-    $("#Fname").blur(function() 
-    {
-        TxtFirstnameFlag = false;
-        $("#FnameValidation").empty();
-        if ($(this).val() == "") 
-        {
-            $("#FnameValidation").html(" * First name Required..!!");
-            // alert("#FnameValidation");
-        } 
-        else 
-        {
-            if (!$(this).val().match($FNameLNameRegEx)) 
-            {
-                $("#FnameValidation").html(" * Invalid First Name..!!");
-                // alert("#FnameValidation");
-            } 
-            else 
-            {
-                TxtFirstnameFlag = true;
-            }
-        }
-    });
-});
-$("#BtnSubmit").click(function() 
-{
-    TxtFirstnameFlag = false;
-    $("#FnameValidation").empty();
-    if ($("#Fname").val() == "") 
-    {
-        $("#FnameValidation").html(" * First Name Required..!!");
-    } 
-    else 
-    {
-        if (!$("#Fname").val().match($FNameLNameRegEx)) 
-        {
-            $("#FnameValidation").html(" * Invalid First Name..!!");
-        } 
-        else 
-        {
-            TxtFirstnameFlag = true;
-        }
-    }
-});
-
-$(document).ready(function() 
-{
-    $("#Lname").blur(function() 
-    {
-        TxtLastnameFlag = false;
-        $("#LnameValidation").empty();
-        if ($(this).val() == "") 
-        {
-            $("#LnameValidation").html(" * Last name Required..!!");
-            // alert("#LameValidation");
-        } 
-        else 
-        {
-            if (!$(this).val().match($FNameLNameRegEx)) 
-            {
-                $("LnameValidation").html(" * Invalid Last Name..!!");
-                // alert("#LnameValidation");
-            } 
-            else 
-            {
-                TxtLastnameFlag = true;
-            }
-        }
-    });
-});
-$("#BtnSubmit").click(function() 
-{
-    TxtLastnameFlag = false;
-    $("#LnameValidation").empty();
-    if ($("#Lname").val() == "") 
-    {
-        $("#LnameValidation").html(" * Last Name Required..!!");
-    } 
-    else 
-    {
-        if (!$("#Lname").val().match($FNameLNameRegEx)) 
-        {
-            $("#LnameValidation").html(" * Invalid Last Name..!!");
-        } 
-        else 
-        {
-            TxtLastnameFlag = true;
-        }
-    }
-});
-
-$(document).ready(function() 
-{
-    $("#Lname").blur(function() 
-    {
-        TxtLastnameFlag = false;
-        $("#LnameValidation").empty();
-        if ($(this).val() == "") 
-        {
-            $("#LnameValidation").html(" * Last name Required..!!");
-            // alert("#LameValidation");
-        } 
-        else 
-        {
-            if (!$(this).val().match($FNameLNameRegEx)) 
-            {
-                $("LnameValidation").html(" * Invalid Last Name..!!");
-                // alert("#LnameValidation");
-            } 
-            else 
-            {
-                TxtLastnameFlag = true;
-            }
-        }
-    });
-});
-$("#BtnSubmit").click(function() 
-{
-    TxtEmailIdFlag = false;
-    $("#EmailValidation").empty();
-    if ($("#Email").val() == "") 
-    {
-        $("#EmailValidation").html(" * Email Required..!!");
-    } 
-    else 
-    {
-        if (!$("#Email").val().match($EmailIdRegEx)) 
-        {
-            $("#Emaildation").html(" * Invalid Email..!!");
-        } 
-        else 
-        {
-            TxtEmailIdFlag = true;
-        }
-    }
-});
-
-$(document).ready(function() 
-{
-    $("#Email").blur(function() 
-    {
-        TxtEmailIdFlag = false;
-        $("#EmailValidation").empty();
-        if ($(this).val() == "") 
-        {
-            $("#EmailValidation").html(" * Email Required..!!");
-            // alert("#EmailValidation");
-        } 
-        else 
-        {
-            if (!$(this).val().match($EmailIdRegEx)) 
-            {
-                $("EmailValidation").html(" * Invalid Email..!!");
-                // alert("#EmailValidation");
-            } 
-            else 
-            {
-                TxtEmailIdFlag = true;
-            }
-        }
-    });
-});
-
-$("#BtnSubmit").click(function() 
-{
-    TxtPasswordFlag = false;
-    $("#PasswordValidation").empty();
-    if ($("#Password").val() == "") 
-    {
-        $("#PasswordValidation").html(" * Password Required..!!");
-    } 
-    else 
-    {
-        if (!$("#Password").val().match($PasswordRegEx)) 
-        {
-            $("#PasswordValidation").html(" * Invalid Password..!!");
-        } 
-        else 
-        {
-            TxtPasswordFlag = true;
-        }
-    }
-});
-
-$(document).ready(function() 
-{
-    $("#Password").blur(function() 
-    {
-        TxtPasswordFlag = false;
-        $("#PasswordValidation").empty();
-        if ($(this).val() == "") 
-        {
-            $("#PasswordValidation").html(" * Password Required..!!");
-            // alert("#PasswordValidation");
-        } 
-        else 
-        {
-            if (!$(this).val().match($PasswordRegEx)) 
-            {
-                $("PasswordValidation").html(" * Invalid Password..!!");
-                // alert("#PasswordValidation");
-            } 
-            else 
-            {
-                TxtPasswordFlag = true;
-            }
-        }
-    });
-});
-
-$("#BtnSubmit").click(function() 
-{
-    TxtAddressFlag = false;
-    $("#AddressValidation").empty();
-    if ($("#Address").val() == "") 
-    {
-        $("#AddressValidation").html(" * Address Required..!!");
-    } 				
-});
-
-$(document).ready(function() 
-{
-    $("#Address").blur(function() 
-    {
-        TxtAddressFlag = false;
-        $("#AddressValidation").empty();
-        if ($(this).val() == "") 
-        {
-            $("#AddressValidation").html(" * Address Required..!!");
-            // alert("#AddressValidation");
-        } 
-    });
-});
-
-$("#BtnSubmit").click(function() 
-{
-    TxtDesignationFlag = false;
-    $("#DesignationValidation").empty();
-    if ($("#Designation").val() == "") 
-    {
-        $("#DesignationValidation").html(" * Designation Required..!!");
-    } 
-    
-});
-
-$(document).ready(function() 
-{
-    $("#Designation").blur(function() 
-    {
-        TxtDesignationFlag = false;
-        $("#DesignationValidation").empty();
-        if ($(this).val() == "") 
-        {
-            $("#DesignationValidation").html(" * Designation Required..!!");
-            // alert("#DesignationValidation");
-        } 
-    });
-});
-
-		</script>
 	</head>
 	<body>
 		<form method="POST" enctype="multipart/form-data">
@@ -315,6 +35,7 @@ $(document).ready(function()
   						$uploadOk = 0;
 					}
 
+
 					// Check file size
 					if ($_FILES["fileToUpload"]["size"] > 500000) 
 					{
@@ -323,7 +44,7 @@ $(document).ready(function()
 					}
 					
 					// Allow certain file formats
-					if($FileType != "pdf" && $FileType != "docx" && $FileType != "xml" ) 
+					if($FileType != "pdf" && $FileType != "docx" && $FileType != "xml" && $FileType != "jpg") 
 					{
   						echo "Sorry, only pdf, docx, xml files are allowed.";
   						$uploadOk = 0;
@@ -413,20 +134,22 @@ $(document).ready(function()
 	
 			<div>
 				<lable>Select File to Upload</lable> 
-				<input type="file" name="fileToUpload" id="fileToUpload" required=""><br>Only xlsx/pdf/docx are allowed.<br>
+				<input type="file" name="fileToUpload" id="fileToUpload" required=""><br>Only xlsx/pdf/docx/jpg are allowed.<br>
 			</div><br>
 
 			<div>
 				<lable>Hobbie:</lable>
-				<input type="checkbox" name="Hobbie[]" value="Reading"/> Reading <br>
-				<input type="checkbox" name="Hobbie[]" value="Travelling"/> Travelling <br>
-				<input type="checkbox" name="Hobbie[]" value="Playing"/> Playing <br>
-				<input type="checkbox" name="Hobbie[]" value="Watching Movie"/> Watching Movie <br><br>
+                <br />
+				<input type="checkbox" name="Hobbie[]" value="Reading"/> Reading <br />
+				<input type="checkbox" name="Hobbie[]" value="Travelling"/> Travelling <br />
+				<input type="checkbox" name="Hobbie[]" value="Playing"/> Playing <br />
+				<input type="checkbox" name="Hobbie[]" value="Watching Movie"/> Watching Movie <br /><br />
 			</div>
             
     		<button type="submit" name="submit" class="btn btn-success" id="BtnSubmit" >Submit</button></td>
-			<a href="logout.php">Log Out</a>
+			
 		</form>
+        <script src="script.js"></script>
 	</body>
 </html>
 
