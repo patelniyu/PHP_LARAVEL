@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2022 at 02:04 PM
+-- Generation Time: May 13, 2022 at 08:22 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -18,67 +18,79 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `checkbox`
+-- Database: `checkboxes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `table1`
+-- Table structure for table `tablea`
 --
 
-CREATE TABLE `table1` (
-  `id1` int(11) NOT NULL,
-  `text1` varchar(255) NOT NULL
+CREATE TABLE `tablea` (
+  `id` int(11) NOT NULL,
+  `checkbox_data` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `table1`
+-- Dumping data for table `tablea`
 --
 
-INSERT INTO `table1` (`id1`, `text1`) VALUES
-(8, 'Checkbox5'),
-(9, 'Checkbox2'),
-(10, 'Checkbox4');
+INSERT INTO `tablea` (`id`, `checkbox_data`) VALUES
+(5, 'Checkbox5'),
+(6, 'Checkbox1'),
+(7, 'Checkbox2');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `table2`
+-- Table structure for table `tableb`
 --
 
-CREATE TABLE `table2` (
-  `id2` int(11) DEFAULT NULL,
-  `text2` varchar(255) NOT NULL
+CREATE TABLE `tableb` (
+  `id` int(11) NOT NULL,
+  `checkbox_data` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `table2`
+-- Dumping data for table `tableb`
 --
 
-INSERT INTO `table2` (`id2`, `text2`) VALUES
-(0, 'Checkbox1'),
-(0, 'Checkbox3');
+INSERT INTO `tableb` (`id`, `checkbox_data`) VALUES
+(3, 'Checkbox3'),
+(4, 'Checkbox4');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `table1`
+-- Indexes for table `tablea`
 --
-ALTER TABLE `table1`
-  ADD PRIMARY KEY (`id1`);
+ALTER TABLE `tablea`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tableb`
+--
+ALTER TABLE `tableb`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `table1`
+-- AUTO_INCREMENT for table `tablea`
 --
-ALTER TABLE `table1`
-  MODIFY `id1` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `tablea`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tableb`
+--
+ALTER TABLE `tableb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

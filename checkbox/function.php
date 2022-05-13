@@ -1,37 +1,66 @@
 <?php
-    class insterdata 
+
+ class insertdata
+{
+    public function insert($data,$table2,$table1,$col)
     {
-        public function insertdata($data,$tableB,$tableA)
+        require('connection.php');
+
+        $data = $_POST['check'];
+       
+
+            foreach($data as $value)
+
         {
-            require("connection.php");
-            echo "Hello";
-            $ins="INSERT INTO table2 VALUES('','$values')";
-            echo $sql; exit;
-            if(mysqli_query($conn, $ins))
+            $query = "INSERT INTO $table2  VALUES ('','$value')";
+            $query_run = mysqli_query($conn,$query);
+            $del_sql = "delete from $table1 where $col = '$value'";
+            //echo $del_sql; exit;
+            mysqli_query($conn,$del_sql);
+        }
+            if($query_run)
             {
-                $del = "DELETE FROM table1 WHERE text1='$values'";
-                if (mysqli_query($conn, $del)) 
-                {
-                            // echo "Record deleted successfully";
-                } 
-                else 
-                {
-                    echo "Error deleting record: " . mysqli_error($conn);
-                }
+                echo "Inserted Successfully";
+                header("Location: form.php");
             }
+            else
+            {
+                echo "Data Not Inserted";
+                //header("Location: tableA.php");
+            }
+
+            echo "HELLO PHP";
+            exit;
+
         }
 
-        public function getdata()
+        public function getdata($table1,$table2)
         {
-            require("connection.php");
-            $query = "SELECT * FROM table1 ORDER BY table1 ASC";
-            $data = mysqli_query($conn, $query);
-            $total = mysqli_num_rows($data);
+            include('connection.php');
+            $query="SELECT * FROM $table1 ORDER BY checkbox_data ASC";
+            $data=mysqli_query($conn,$query);
+            $total['total1']=mysqli_num_rows($data);
+            $total['data']=$data;
 
-            $query1 = "SELECT * FROM table2 ORDER BY table2 ASC";
-            $data1 = mysqli_query($conn, $query1);
-            $total1 = mysqli_num_rows($data1);
-
+            $query1="SELECT * FROM $table2 ORDER BY checkbox_data ASC";
+            $data1=mysqli_query($conn,$query1);
+            $total['total2']=mysqli_num_rows($data1);
+            $total['data1']=$data1;
+            return $total;
         }
+
+  
+
+        
+
+
+
+
+
     }
+
+    
+    
+
+
 ?>

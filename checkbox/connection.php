@@ -1,7 +1,19 @@
 <?php
-    define('host','localhost');
-    define('user','root');
-    define('password','');
-    define('db','checkbox');
-    $conn=mysqli_connect(host,user,password,db);
-?>
+ 
+ $servername="localhost";
+ $username="root";
+ $password="";
+ $databasename="checkboxes";
+
+
+ $conn=mysqli_connect("$servername","$username","$password","$databasename");
+ 
+ if($conn)
+ {
+    // echo "Connection Establish";
+ }
+ else
+ {
+     echo "Connection Failed";
+ }
+ ?>
