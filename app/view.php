@@ -49,10 +49,10 @@
                 <td><?php echo $rowq['Address'];?></td>
                 <td><?php echo $rowq['Designation'];?></td>
                 <td><?php echo $rowq['Gender'];?></td>
-                <td><?php echo $rowq['File'];?></td>
+                <!-- <td></?></td> -->
                 <td><?php echo $rowq['Hobbie'];?></td>
                 
-
+                <td><a href="uploads/<?php echo $rowq['File'];?>"><?=$rowq['File']?></a></td>
                 <td> <button type="submit" name="delete"  onclick="deleteRecord('<?php echo $rowq['id'];?>')" >Delete</button>
                 <a href="edit.php?id1=<?php echo $rowq['id'];?>">Update </a></td>
                                                      

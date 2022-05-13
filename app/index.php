@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['Email'])
+    if(isset($_SESSION['Email']))
     {
         header("Location:view.php");
     }

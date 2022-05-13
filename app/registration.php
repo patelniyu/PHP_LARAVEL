@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_SESSION['Email']))
+    {
+        header("Location:view.php");
+    }
+?>
 <html>
     <head>
         <title>Registration Form</title>

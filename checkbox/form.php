@@ -1,103 +1,101 @@
 <?php
-include('connection.php');
-include ('function.php');
-//$query = mysqli_query($conn,"select * from tablea ORDER BY checkbox_data ASC");
-    $calltoaction=new insertdata();
+    include('connection.php');
+    include ('function.php');
 
-    if (isset($_POST['swap1'])){
-       
-        $calltoaction->insert($value,'tableb','tablea','checkbox_data');
+    $calltoaction=new insertdata();
+    if (isset($_POST['swap1']))
+    {
+        $data = $_POST['check'];
+        $calltoaction->insert($data,'tableb','tablea','checkbox_data');
         echo"Done";
         // exit;
     }
-
     if (isset($_POST['swap2']))
     {
         $data = $_POST['check'];
-        $calltoaction->insert($value,'tablea','tableb','checkbox_data');
+        $calltoaction->insert($data,'tablea','tableb','checkbox_data');
     }
     $totaldata=$calltoaction->getdata('tablea','tableb');
     $query=$totaldata['data'];
     $query1=$totaldata['data1'];
 ?>
 <?php
-session_start();
+    session_start();
 ?>
 <html>
-<head>
-<body>
-    <?php
-    if(isset($_SESSION['status']))
-    {
-        echo "<h4>".$SESSION['status']."</h4>";
-        unset($_SESSION['status']);
-    }
-    ?>
+    <head>
+        <title>Checkbox</title>
+    </head>
+    <body>
+        <?php
+            if(isset($_SESSION['status']))
+            {
+                echo "<h4>".$SESSION['status']."</h4>";
+                unset($_SESSION['status']);
+            }
+        ?>
     
-        <h1>Table A</h1>
+        <center><h2>Table A</h2></center>
         <form method="POST" action="">
-            <table border="1">
-                <tr>
-                    <th></th>
-                    <th>Checkboxes</th>
-                </tr>
-                <?php
-                    while($row = mysqli_fetch_array($query))
-                    {
-                        echo "<tr>";
-                        echo "<td> <input type='checkbox' name='check[]' value='".$row['checkbox_data']."'></td><td>".$row['checkbox_data']." </td>" ;
-                        echo "</tr>";
-                    }
-                    echo "</table>";
+            <center>
+                <table border="1">
+                    <tr>
+                        <th></th>
+                        <th>Checkboxes</th>
+                    </tr>
+                    <?php
+                        while($row = mysqli_fetch_array($query))
+                        {
+                            echo "<tr>";
+                            echo "<td> <input type='checkbox' name='check[]' value='".$row['checkbox_data']."'></td><td>".$row['checkbox_data']." </td>" ;
+                            echo "</tr>";
+                        }
+                        echo "</table>";
 
-                ?>
-                </br>
-                <input type="submit" name="swap1" id="swap1" value="Swap to B">
+                    ?>
+                    </br>
+                    <input type="submit" name="swap1" id="swap1" value="Swap to B">
+                    </br></br>
+                </table>
+            </center>
         </form>
-
-</body>
-</head>
+    </body>
 </html>
 
-
-
-    <?php
-    //$query1 = mysqli_query($conn,"select * from tableb ORDER BY checkbox_data ASC");
-    ?>
-
 <html>
-<body>
-    <?php
-    if(isset($_SESSION['status']))
-    {
-        echo "<h4>".$SESSION['status']."</h4>";
-        unset($_SESSION['status']);
-    }
-    ?>
+    <body>
+        <?php
+            if(isset($_SESSION['status']))
+            {
+                echo "<h4>".$SESSION['status']."</h4>";
+                unset($_SESSION['status']);
+            }
+        ?>
     
-        <h1>Table B</h1>
-        <form method="POST" action="">
-            <table border="1">
-                <tr>
-                    <th></th>
-                    <th>Checkboxes</th>
-                </tr>
-                <?php
-                    while($row = mysqli_fetch_array($query1))
-                    {
-                        echo "<tr>";
-                        echo "<td> <input type='checkbox' name='check[]' value='".$row['checkbox_data']."'></td><td>".$row['checkbox_data']."</td>";
-                        echo "</tr>";
-                    }
-                    echo "</table>";
-                ?>
-                </br>
-                <input type="submit" name="swap2" id="swap2" value="Swap to A">
-                </form>
+        <center><h2>Table B</h2></center>
+            <form method="POST" action="">
+                <center>
+                    <table border="1">
+                        <tr>
+                            <th></th>
+                            <th>Checkboxes</th>
+                        </tr>
+                        <?php
+                            while($row = mysqli_fetch_array($query1))
+                            {
+                                echo "<tr>";
+                                echo "<td> <input type='checkbox' name='check[]' value='".$row['checkbox_data']."'></td><td>".$row['checkbox_data']."</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        ?>
+                        </br>
+                        <input type="submit" name="swap2" id="swap2" value="Swap to A">
+                    </table>
+                </center>
+            </form>
         <?php
             mysqli_close($conn);
         ?>
-   
-
-</body>
+    </body>
 </html> 
