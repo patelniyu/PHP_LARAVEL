@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2022 at 02:05 PM
+-- Generation Time: May 16, 2022 at 06:46 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -45,13 +45,11 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `Fname`, `Lname`, `Email`, `Password`, `Address`, `Designation`, `Gender`, `File`, `Hobbie`) VALUES
-(6, 'aaa', 'bbbb', 'ab@gmail.com', 'aaa', 'mehsana', 'Jr. Developer', '0', 'Remaining Excersise.txt', 'Travelling, Playing'),
-(10, 'Ayati', 'Patel', 'ayati@gmail.com', 'ayati', 'Mehsana', 'Humman resource', '1', 'Technical_exercise.docx', 'Reading, Playing'),
-(11, 'Niyati', 'Patel', 'niyati@gmail.com', 'niyati', 'Mehsana', 'Humman resource', '1', 'Technical_exercise.docx', 'Reading, Travelling'),
-(12, 'Niyu', 'a.aNV', 'LCNL;ANV,02BVKJA', 'FJBCWN', 'JF KQNW', 'Project Manager', '0', '180390107028_CompletionCertificate_PMMS.pdf', 'Reading, Travelling'),
-(13, 'Niyu', 'a.aNV', 'abc@gmail.com', '123', 'JF KQNW', 'Project Manager', '0', '180390107028_CompletionCertificate_PMMS.pdf', 'Reading, Travelling'),
-(14, 'Niyu', 'Patel', 'abc@gmail.com', '123', 'JF KQNW', 'Project Manager', '0', '180390107028_CompletionCertificate_PMMS.pdf', 'Reading, Travelling'),
-(15, 'Zalak', 'Patel', 'zalak@gmail.com', '', 'Gandhinagar', 'Jr. Developer', '1', '', 'Reading, Travelling');
+(1, 'Niyati', 'Patel', 'niyati@gmail.com', 'niyati', 'Mehsana', 'Project Manager', '1', 'Technical_exercise (1).docx', 'Reading, Travelling'),
+(3, 'Shreyas', 'Patel', 'shreyas@gmail.com', 'shreyu', 'Ahmedabad', 'Jr. Developer', '0', 'Annual.docx', 'Playing, Watching Movie'),
+(4, 'Anand', 'Patel', 'anand@gmail.com', 'anand', 'Mehsana', 'Humman resource', '0', 'report.docx', 'Travelling, Watching Movie'),
+(5, 'Yashvi', 'Suthar', 'yashvi@gmail.com', 'yashvi', 'Kalol', 'Jr. Developer', '1', 'flow.docx', 'Reading, Playing'),
+(6, 'Nitya', 'Patel', 'nitya@gmail.com', 'nitya', 'Patan', 'Sr. Developer', '1', 'Niyati Patel.pdf', 'Playing, Watching Movie');
 
 --
 -- Indexes for dumped tables
@@ -71,7 +69,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

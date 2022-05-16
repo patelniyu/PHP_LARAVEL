@@ -9,6 +9,8 @@
     <head>
         <title>Log In Form</title>
 		<link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		<script src="script.js"></script>
     </head>
     <body>
         <form method="POST" enctype="multipart/form-data">

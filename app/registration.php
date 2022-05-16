@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="style.css">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-
+		<script src="script.js"></script>
 	</head>
 	<body>
 		<form method="POST" enctype="multipart/form-data">
@@ -142,6 +142,7 @@
 			<div>
 				<lable>Select File to Upload</lable> 
 				<input type="file" name="fileToUpload" id="fileToUpload" required=""><br>Only xlsx/pdf/docx/jpg are allowed.<br>
+				
 			</div><br>
 
 			<div>
@@ -156,7 +157,6 @@
     		<button type="submit" name="submit" class="btn btn-success" id="BtnSubmit" >Submit</button></td>
 			
 		</form>
-        <script src="script.js"></script>
 	</body>
 </html>
 
