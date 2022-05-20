@@ -1,25 +1,24 @@
 <?php
 	include('connection.php');
-	if(isset($_REQUEST["file"])){
-		// Get parameters
-		$file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
+	
+	if(isset($_POST['delete_file']))
+	{
+		$id = $_POST['delete_id'];
+		$File = $_POST['del_file'];
 
-		/* Test whether the file name contains illegal characters
-		such as "../" using the regular expression */
-			$filename = "uploads/" . $file;
+		$query = "DELETE FROM students WHERE id='$id' ";
+		$query_run = mysqli_query($conn,$query);
 
-			//$filename = 'readme.pdf';
-
-		if(file_exists($filename))  
+		if($query_run)
 		{
-		if(unlink($filename))
-		{
-			echo "file named $file has been deleted successfully";
+			unlink("uploads/".$File);
+			echo "File deleted successfully!!!";
+			header("Location: view.php");
 		}
 		else
 		{
-			echo "file is not deleted";
-		}
+			echo "File not deleted!!!";
+			header("Location: view.php");
 		}
 	}
 ?>

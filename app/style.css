@@ -1,7 +1,8 @@
 
 body
 {    
-	font-family: Calibri;    
+	font-family: Calibri;  
+	background: rgb(64, 96, 138);  
 }    
 input[type="text"] 
 {    

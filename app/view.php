@@ -15,10 +15,11 @@
     </head>
     <body>
         <center><form method="POST" name="frm">
+        <link href="css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" />
    	    <h2>Form Details</h2>
-        <table id="table" border=2>
+        <table  id="tabledata" class=" table table-striped table-hover table-bordered">
                      
-            <tr>
+            <tr class="text-center">
                 <th>ID</th>
                 <th>Fname</th>
                 <th>Lname</th>
@@ -29,7 +30,8 @@
                 <th>Gender</th>             
                 <th>Files</th>
                 <th>Hobbie</th>
-                <th>Operation</th>  
+                <th>Update</th>  
+                <th>Delete</th>
             </tr>
                      
             <?php
@@ -40,7 +42,7 @@
                 {
             ?>
 
-            <tr>
+            <tr class="text-center">
                 <td><?php echo $rowq['id'];?></td>
                 <td><?php echo $rowq['Fname'];?></td>
                 <td><?php echo $rowq['Lname'];?></td>
@@ -49,13 +51,18 @@
                 <td><?php echo $rowq['Address'];?></td>
                 <td><?php echo $rowq['Designation'];?></td>
                 <td><?php echo $rowq['Gender'];?></td>
-                <!-- <td></?></td> -->
-                <td><?php echo $rowq['Hobbie'];?></td>
-                
                 <td><a href="uploads/<?php echo $rowq['File'];?>"><?=$rowq['File']?></a></td>
-                <td> <button type="submit" name="delete"  onclick="deleteRecord('<?php echo $rowq['id'];?>')" >Delete</button>
-                <a href="edit.php?id1=<?php echo $rowq['id'];?>">Update </a></td>
-                                                     
+                <td><?php echo $rowq['Hobbie'];?></td>
+                <!-- <td> <button type="submit" name="delete"  onclick="deleteRecord('</?php //echo $rowq['id'];?>')" >Delete</button> -->
+                <td><a href="edit.php?id1=<?php echo $rowq['id'];?>" class="btn btn-info">Update </a></td>
+                <!-- <a href="delete.php" class="btn btn-danger">Delete</a>-->
+                <td>
+                    <form action="deletefile.php" method="POST">
+                        <input type="hidden" name="delete_id" value="<?php echo $rowq['id']; ?>">
+                        <input type="hidden" name="del_file" value="<?php echo $rowq['File']; ?>">
+                        <button type="submit" name="delete_file" class="btn btn-danger">Delete</button>
+                    </form>
+                </td> 
             <?php
                 }
             ?>
@@ -95,7 +102,7 @@
     
         </table>
         </form></center>
-        <center><a href="logout.php">Log Out</a></center>
+        <center><a href="logout.php" class="btn btn-success">Log Out</a></center>
     </body>
 </html>     
                      

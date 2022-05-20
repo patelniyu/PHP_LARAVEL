@@ -9,6 +9,7 @@
     <head>
         <title>Log In Form</title>
 		<link rel="stylesheet" href="style.css">
+        <link href="css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 		<script src="script.js"></script>
     </head>
@@ -42,26 +43,23 @@
                 }
             }
         ?>
-
-
-        
-
+    
             <h2> Log In Form</h2>
 
             <div>
     			<label>Email: </label>
-    			<input type="text" placeholder="Enter Your Email Here..." name="Email"  id="Email">
+    			<input type="text" placeholder="Enter Your Email" name="Email"  id="Email" autocomplete="off">
     			<small id="EmailValidation"></small>
     		</div><br>
     
 			<div>
     			<label>Password: </label>
-    			<input type="password" placeholder="Enter Your Password Here..." name="Password"  id="Password">
+    			<input type="password" placeholder="Enter Password" name="Password"  id="Password">
     			<small id="PasswordValidation"></small>
     		</div><br>
 
             <button type="submit" name="submit" class="btn btn-success" id="BtnSubmit" >Log In</button></td>
-            <a href="registration.php">Register</a>
+            <a class="btn btn-primary" href="registration.php">Register</a>
             
         </form>
     </body>
