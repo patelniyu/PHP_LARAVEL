@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 06:46 AM
+-- Generation Time: May 20, 2022 at 02:13 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -45,11 +45,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `Fname`, `Lname`, `Email`, `Password`, `Address`, `Designation`, `Gender`, `File`, `Hobbie`) VALUES
-(1, 'Niyati', 'Patel', 'niyati@gmail.com', 'niyati', 'Mehsana', 'Project Manager', '1', 'Technical_exercise (1).docx', 'Reading, Travelling'),
-(3, 'Shreyas', 'Patel', 'shreyas@gmail.com', 'shreyu', 'Ahmedabad', 'Jr. Developer', '0', 'Annual.docx', 'Playing, Watching Movie'),
-(4, 'Anand', 'Patel', 'anand@gmail.com', 'anand', 'Mehsana', 'Humman resource', '0', 'report.docx', 'Travelling, Watching Movie'),
-(5, 'Yashvi', 'Suthar', 'yashvi@gmail.com', 'yashvi', 'Kalol', 'Jr. Developer', '1', 'flow.docx', 'Reading, Playing'),
-(6, 'Nitya', 'Patel', 'nitya@gmail.com', 'nitya', 'Patan', 'Sr. Developer', '1', 'Niyati Patel.pdf', 'Playing, Watching Movie');
+(1, 'Anand', 'Patel', 'anand@gmail.com', 'anand', 'Mehsana', 'Humman resource', '0', 'photograph.pdf', 'Playing, Watching Movie'),
+(2, 'Niyati', 'Patel', 'niyati@gmail.com', 'niyati', 'Mehsana', 'Project Manager', '1', 'Data.docx', 'Reading, Travelling'),
+(3, 'Yashvi', 'Suthar', 'yashvi@gmail.com', 'yashvi', 'Kalol', 'Sr. Developer', '1', 'Technical_exercise (1).docx', 'Reading, Playing'),
+(4, 'Dhruvi', 'Makavana', 'dhruvi@gmail.com', 'dhruvi', 'Jetpur', 'Jr. Developer', '1', 'flow.docx', 'Reading, Travelling');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +68,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
