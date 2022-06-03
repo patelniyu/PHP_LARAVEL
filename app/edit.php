@@ -18,7 +18,7 @@
     <body>
         <form method="get" action="update.php">
             <h2>Update Form</h2>
-            <div>id
+            <div>Id:
             <input type=" " name="id" value="<?php echo $id; ?>">
             </div><br>
     
@@ -72,8 +72,7 @@
                 <!-- <p><file scr="uploads/<?php //echo $file; ?>"></p> -->
             </div>
 
-            <button type="submit" name="update" class="btn btn-success " >Update</button></td>
-                    
+            <button type="submit" name="update" class="btn btn-success " >Update</button></td>                    
         </form>
     </body>
 </html>

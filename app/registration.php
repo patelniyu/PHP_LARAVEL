@@ -77,7 +77,7 @@
   						}
 					}
 					$sql="insert into students(Fname,Lname,Email,Password,Address,Designation,Gender,file,Hobbie)values('$Fname','$Lname','$Email','$Password','$Address','$Designation','$Gender','$file','$Hobbie')";
-        			$r=mysqli_query($conn,$sql);
+        			$r=mysqli_query($conn,$sql); 
 	
         			if($r>=1)
         			{
