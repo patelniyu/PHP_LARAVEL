@@ -60,7 +60,7 @@
                 }
             ?>
         </td>
-        <td><img src="<?php echo "uploads/".$rowq['Image'];?>" width=100px alt="Image"></td>
+        <td><img src="<?php echo "../niyati/admin/uploads/".$rowq['Image'];?>" width=100px alt="Image"></td>
         
 
         <td><?php echo $rowq['Active'];?></td>

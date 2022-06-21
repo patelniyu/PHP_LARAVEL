@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 02:21 PM
+-- Generation Time: Jun 21, 2022 at 07:46 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -33,35 +33,19 @@ CREATE TABLE `admin` (
   `Email` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Gender` enum('0','1') NOT NULL,
-  `Hobbie` varchar(255) NOT NULL
+  `Hobbie` varchar(255) NOT NULL,
+  `utype` enum('1','2') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `Name`, `Email`, `Password`, `Gender`, `Hobbie`) VALUES
-(1, 'Anand', 'anand@gmail.com', 'anand', '0', 'Cricket,Singing,Swimming'),
-(2, 'Niyati', 'niyati@gmail.com', 'niyati', '1', 'Singing,Shopping'),
-(3, 'Yashvi', 'yashvi@gmail.com', 'yashvi', '1', 'Cricket,Swimming');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin_login`
---
-
-CREATE TABLE `admin_login` (
-  `Email` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin_login`
---
-
-INSERT INTO `admin_login` (`Email`, `Password`) VALUES
-('testuser@kcsitglobal.com', 'secret');
+INSERT INTO `admin` (`id`, `Name`, `Email`, `Password`, `Gender`, `Hobbie`, `utype`) VALUES
+(1, '', 'testuser@kcsitglobal.com', 'secret', '', '', '1'),
+(6, 'Niyati', 'niyati@gmail.com', 'niyati', '1', 'Singing,Shopping', '2'),
+(7, 'Anand', 'anand@gmail.com', 'anand', '0', 'Swimming,Shopping', '2'),
+(8, 'Zalak11', 'zalak11@gmail.com', 'zalak123', '1', 'Cricket,Singing,Swimming,Shopping', '2');
 
 -- --------------------------------------------------------
 
@@ -80,12 +64,12 @@ CREATE TABLE `catagory` (
 --
 
 INSERT INTO `catagory` (`catagory_id`, `CName`, `Active`) VALUES
-(1, 'Phone', 'Yes'),
-(2, 'Makeup', 'Yes'),
-(3, 'Clothes', 'Yes'),
-(4, 'Grocery', 'Yes'),
-(6, 'Shampoo', 'Yes'),
-(7, 'Hair Care Products', 'Yes');
+(1, 'Phones', 'Yes'),
+(2, 'Grocery', 'Yes'),
+(3, 'Makeup', 'Yes'),
+(4, 'Clothes', 'Yes'),
+(5, 'Hair Care Products', 'Yes'),
+(6, 'Foods', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -107,13 +91,15 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `Name`, `Catagory`, `Image`, `Created_By_User_id`, `Active`) VALUES
-(1, 'Fruits', 4, 'fruits.PNG', 'testuser@kcsitglobal.com', 'Yes'),
-(2, 'Lipstic', 2, 'mackup.PNG', 'testuser@kcsitglobal.com', 'Yes'),
-(3, 'Mamaearth Hair Mask', 7, 'mamaearth.PNG', 'testuser@kcsitglobal.com', 'Yes'),
-(4, 'iPhone', 1, 'iPhone.PNG', 'testuser@kcsitglobal.com', 'Yes'),
-(5, 'T-Shirts', 3, 'clothes.PNG', 'testuser@kcsitglobal.com', 'Yes'),
-(6, 'Dove 2 in 1', 6, 'dove.PNG', 'testuser@kcsitglobal.com', 'Yes'),
-(7, 'Vegetables', 4, 'vagetable.PNG', 'testuser@kcsitglobal.com', 'Yes');
+(1, 'Fruits', 2, 'fruits.PNG', 'testuser@kcsitglobal.com', 'Yes'),
+(2, 'Lipstic', 3, 'mackup.PNG', 'testuser@kcsitglobal.com', 'Yes'),
+(3, 'iPhone', 1, 'iPhone.PNG', 'niyati@gmail.com', 'Yes'),
+(4, 'Eye Shadow', 3, 'eyeshadow.PNG', 'niyati@gmail.com', 'Yes'),
+(5, 'Vegetables', 2, 'vagetable.PNG', 'anand@gmail.com', 'Yes'),
+(6, 'Jeans', 4, 'jeans.PNG', 'anand@gmail.com', 'Yes'),
+(7, 'T-Shirts', 4, 'clothes.PNG', 'testuser@kcsitglobal.com', 'Yes'),
+(8, 'Redmi Note 11 pro', 1, 'redmi.PNG', 'niyati@gmail.com', 'Yes'),
+(9, 'Idali-Dosa', 6, 'food.PNG', 'zalak11@gmail.com', 'Yes');
 
 --
 -- Indexes for dumped tables
@@ -145,7 +131,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `catagory`
@@ -157,7 +143,7 @@ ALTER TABLE `catagory`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

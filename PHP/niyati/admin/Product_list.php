@@ -5,7 +5,7 @@
         header("Location:login.php");
     }
 ?>
-?>
+
 <html>
     <head>
         <title>Product List</title>
