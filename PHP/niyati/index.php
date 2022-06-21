@@ -36,11 +36,11 @@
             <div class="pull-right" id="filters">
             <?php if($utype == "1" || $utype == "2"){ ?>
             <b>Logout: </b><a href="logout.php"><b><?php if($_SESSION['Email']){ echo $_SESSION['Email'];} ?></b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-          
                 <a class="btn btn-success" href="Product_create.php">Add new Product</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="btn btn-success" href="Catagory_list.php">Back</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="btn btn-success" href="Product_list.php">Back to Product List</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <br><br>  <?php } ?>
+            
 
                 <span><b>Catagory: </b>&nbsp;</span>
                 <select name="catagory_id" id="catagory_id">

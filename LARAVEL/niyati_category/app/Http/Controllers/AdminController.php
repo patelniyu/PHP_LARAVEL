@@ -67,9 +67,9 @@ class AdminController extends Controller
                         ->with('success','Admin updated successfully');
     }
 
-    public function destroy(User $user)
+    public function destroy(User $admin)
     {
-        $user->delete();
+        $admin->delete();
         //echo $post->id; exit;
         return redirect()->route('admins.index')
                         ->with('success','Admin deleted successfully');
