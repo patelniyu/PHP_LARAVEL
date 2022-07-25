@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2022 at 02:11 PM
+-- Generation Time: Jul 25, 2022 at 08:44 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -35,13 +35,6 @@ CREATE TABLE `carts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `carts`
---
-
-INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `updated_at`) VALUES
-(1, '10', '1', '2', '2022-07-21 22:00:31', '2022-07-21 22:00:39');
 
 -- --------------------------------------------------------
 
@@ -158,9 +151,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `fname`, `lname`, `email`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `total_price`, `status`, `message`, `tracking_no`, `created_at`, `updated_at`) VALUES
-(1, '6', 'Ayati', 'Patel', 'ayati@gmail.com', '9999988888', '3, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', '', 0, NULL, 'hello5224', '2022-07-22 01:25:29', '2022-07-22 01:25:29'),
-(2, '6', 'Niyati', 'Patel', 'ayati@gmail.com', '9988776655', '3, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', '', 0, NULL, 'hello8747', '2022-07-22 01:29:33', '2022-07-22 01:29:33'),
-(3, '6', 'Ayati', 'Patel', 'ayati@gmail.com', '9999988888', '3, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', '18499', 1, NULL, 'hello8094', '2022-07-22 01:36:34', '2022-07-22 05:44:23');
+(1, '2', 'Anand', 'Patel', 'anand@gmail.com', '9999988888', '5, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', '20000', 0, NULL, 'hello2761', '2022-07-25 00:56:13', '2022-07-25 00:56:13'),
+(2, '3', 'Zalak', 'Patel', 'zalak@gmail.com', '9988776655', '35, Apartment', 'Randeja', 'Gandhinagar', 'Gujarat', 'India', '382026', '99', 0, NULL, 'hello8959', '2022-07-25 00:58:30', '2022-07-25 00:58:30'),
+(3, '4', 'Ayati', 'Patel', 'ayati@gmail.com', '9999988888', '5, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', '18499', 0, NULL, 'hello1854', '2022-07-25 01:05:09', '2022-07-25 01:05:09');
 
 -- --------------------------------------------------------
 
@@ -183,9 +176,9 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `prod_id`, `qty`, `price`, `created_at`, `updated_at`) VALUES
-(1, '1', '4', '2', '494', '2022-07-22 01:25:30', '2022-07-22 01:25:30'),
-(2, '2', '2', '5', '99', '2022-07-22 01:29:33', '2022-07-22 01:29:33'),
-(3, '3', '1', '1', '18499', '2022-07-22 01:36:34', '2022-07-22 01:36:34');
+(1, '1', '8', '1', '20000', '2022-07-25 00:56:13', '2022-07-25 00:56:13'),
+(2, '2', '2', '1', '99', '2022-07-25 00:58:30', '2022-07-25 00:58:30'),
+(3, '3', '1', '1', '18499', '2022-07-25 01:05:09', '2022-07-25 01:05:09');
 
 -- --------------------------------------------------------
 
@@ -249,12 +242,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `tax`, `status`, `trending`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
-(1, 3, 'Mi TV 32 inch', 'mi tv 32 inch', '80 cm (32\")\r\nSmart TV, Android 11 OS\r\n12 Months Warranty', 'Quad-Core Processor \r\nDolby Audio Sound \r\nWi-Fi Support', '24999', '18499', '1657782427.jpg', '8', '18', 1, 1, 'Mi TV 32 inch', '32 inch\r\nSmart TV', 'Enjoy the amazing features by getting the Redmi 80cm (32 Inch) HD Ready LED Android Smart TV', '2022-07-12 22:34:17', '2022-07-22 01:36:34'),
-(2, 4, 'Window cleaner', 'window cleaner', 'Window Groove Frame Cleaning Brush', 'Track Cleaning Brushes \r\nDust Cleaner Tool for All Corners Edges and Gaps \r\nMulticolour', '199', '99', '1657782439.jpg', '0', '0', 1, 1, 'Window cleaner', 'Dust Cleaner Tool', 'Get it Jul 19 - 21 FREE Delivery', '2022-07-12 22:38:24', '2022-07-22 01:29:33'),
-(4, 6, 'Earring', 'earring', 'Pastel Green & Pink Meenakari Lotus Design Layered Chandbali Earring', 'Plating: Gold\r\nSegment: Ethnic\r\nOccasion: Wedding', '3292', '494', '1657782482.jpg', '4', '0', 1, 1, 'Earring', 'Pastel Green & Pink', 'Pastel green and pink meenakari lotus design layered chandbali earrings.', '2022-07-12 22:48:52', '2022-07-22 01:25:30'),
+(1, 3, 'Mi TV 32 inch', 'mi tv 32 inch', '80 cm (32\")\r\nSmart TV, Android 11 OS\r\n12 Months Warranty', 'Quad-Core Processor \r\nDolby Audio Sound \r\nWi-Fi Support', '24999', '18499', '1657782427.jpg', '7', '18', 1, 1, 'Mi TV 32 inch', '32 inch\r\nSmart TV', 'Enjoy the amazing features by getting the Redmi 80cm (32 Inch) HD Ready LED Android Smart TV', '2022-07-12 22:34:17', '2022-07-25 01:05:09'),
+(2, 4, 'Window cleaner', 'window cleaner', 'Window Groove Frame Cleaning Brush', 'Track Cleaning Brushes \r\nDust Cleaner Tool for All Corners Edges and Gaps \r\nMulticolour', '199', '99', '1657782439.jpg', '1', '0', 1, 1, 'Window cleaner', 'Dust Cleaner Tool', 'Get it Jul 19 - 21 FREE Delivery', '2022-07-12 22:38:24', '2022-07-25 00:58:30'),
+(4, 6, 'Earring', 'earring', 'Pastel Green & Pink Meenakari Lotus Design Layered Chandbali Earring', 'Plating: Gold\r\nSegment: Ethnic\r\nOccasion: Wedding', '3292', '494', '1657782482.jpg', '3', '0', 1, 1, 'Earring', 'Pastel Green & Pink', 'Pastel green and pink meenakari lotus design layered chandbali earrings.', '2022-07-12 22:48:52', '2022-07-25 00:51:13'),
 (5, 7, 'Soft Toys', 'soft toys', 'Bolt Soft Toys Cartoon Characters Plush For Kids', 'Cartoon Characters Plush\r\nFor Kids\r\nBest Soft Toy Big Size - 35 Cm', '289', '289', '1657782491.jpg', '8', '0', 1, 1, 'Soft Toys', 'Cartoon Characters Plush', 'Bolt Soft Toys Cartoon Characters Plush For Kids', '2022-07-12 22:52:07', '2022-07-14 01:38:11'),
 (7, 5, 'Shirts', 'shirts', 'Plain Cotton Solid Shirts Combo', 'Fabric	Carbon Cotton\r\nNeck	Classic Collar\r\nPattern	Solid\r\nSleeve	Full-Sleeves\r\nFit	Regular-fit', '3998', '1998', '1657782801.jpg', '0', '18', 1, 1, 'Shirts', 'Plain Cotton Solid Shirts Combo', 'Plain Cotton Solid Shirts Combo', '2022-07-14 01:43:21', '2022-07-21 04:59:41'),
-(8, 5, 'Lehenga choli', 'lehenga choli', 'Pink lehenga.', 'Color: Pink\r\nMaterial: Net\r\nOccasions: Wedding', '24999', '20000', '1658477773.jpg', '5', '0', 1, 1, 'Lehenga choli', 'Lehenga choli\r\nWedding season\r\nPink Color', 'Lehenga choli\r\nWedding season\r\nPink Color', '2022-07-22 02:46:13', '2022-07-22 02:46:13');
+(8, 5, 'Lehenga choli', 'lehenga choli', 'Pink lehenga.', 'Color: Pink\r\nMaterial: Net\r\nOccasions: Wedding', '24999', '20000', '1658477773.jpg', '4', '0', 1, 1, 'Lehenga choli', 'Lehenga choli\r\nWedding season\r\nPink Color', 'Lehenga choli\r\nWedding season\r\nPink Color', '2022-07-22 02:46:13', '2022-07-25 00:56:13');
 
 -- --------------------------------------------------------
 
@@ -268,14 +261,14 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address1` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address2` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pincode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lname` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role_as` tinyint(4) NOT NULL DEFAULT 0,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -287,11 +280,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `lname`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Niyati', 'niyati@gmail.com', NULL, '$2y$10$Xsf.N8n2UhGESx4mZSiASuwQvq/II4Q3WGBHqtR/u8nKpeXfh/oO6', '', '', '', '', '', '', '', '', 1, NULL, '2022-07-10 23:14:16', '2022-07-10 23:14:16'),
-(5, 'Anand', 'anand@gmail.com', NULL, '$2y$10$2i1bhyv0aDj0ZZbESFdSE.0bdoiyhgFRF9Z2tfURaTHiMx4BfQf.O', 'Patel', '9999988888', '3, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', 0, NULL, '2022-07-18 22:35:51', '2022-07-22 01:15:02'),
-(6, 'Ayati', 'ayati@gmail.com', NULL, '$2y$10$3yvVt473YF9LN07glDJb4.0EVQDaf.hf8GlCYsBc1/byplkhz7zB2', 'Patel', '9988776655', '3, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', 0, NULL, '2022-07-20 21:58:27', '2022-07-22 00:34:26'),
-(9, 'Pari', 'pari@gmail.com', NULL, '$2y$10$Itai2F57y2vLxxoYlmlc2OmV8Wkfh7Y7Ez0vHuQFZ9jlXyyUjbgme', '', '', '', '', '', '', '', '', 0, NULL, '2022-07-21 07:31:03', '2022-07-21 07:31:03'),
-(10, 'Purv', 'purv@gmail.com', NULL, '$2y$10$xqzSoQF2VO4SlOVEaS93Ge8aayl0V0vvLrPzJaaNlD8.wcfu5HfbW', 'Patel', '9999988888', '3, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', 0, NULL, '2022-07-21 07:35:57', '2022-07-21 23:07:48');
+(1, 'Niyati', 'niyati@gmail.com', NULL, '$2y$10$cfRkRPF8kNnxVS8uakmbmOraWsBIEokErGi1boIQoXkza.Ij37nj.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '2022-07-25 00:54:05', '2022-07-25 00:54:05'),
+(2, 'Anand', 'anand@gmail.com', NULL, '$2y$10$C7GHYtSyS65VUSdc4Y36p.Wow8ARjF1oDxAFGTv6b.CBjr0T2qzse', 'Patel', '9999988888', '5, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', 0, NULL, '2022-07-25 00:55:03', '2022-07-25 00:56:13'),
+(3, 'Zalak', 'zalak@gmail.com', NULL, '$2y$10$S/ccsxVG7I384cAjc1xKje27MqaHpHYm3nSYi6yWoFH7Q1ecqh1TC', 'Patel', '9988776655', '35, Apartment', 'Randeja', 'Gandhinagar', 'Gujarat', 'India', '382026', 0, NULL, '2022-07-25 00:57:10', '2022-07-25 00:58:30'),
+(4, 'Ayati', 'ayati@gmail.com', NULL, '$2y$10$Sfh9pABAq25653Nc0Jz2ke7QFLjG9GzQsEgD4Ofuau.V85r51axsS', 'Patel', '9999988888', '5, Green Villa', 'Modhera Road', 'Mehsana', 'Gujarat', 'India', '384002', 0, NULL, '2022-07-25 01:03:44', '2022-07-25 01:05:09');
 
 --
 -- Indexes for dumped tables
@@ -369,7 +361,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -417,7 +409,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
