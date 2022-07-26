@@ -12,7 +12,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Order View</h4>
-                        <a href="{{ url('my-orders') }}" class="btn btn-warning">Back</a>
+                        <a href="{{ url('my-orders') }}" class="btn btn-warning float-end">Back</a>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -33,7 +33,7 @@
                                     {{ $orders->address2 }}, <br>
                                     {{ $orders->city }}, <br>
                                     {{ $orders->state }}, <br>
-                                    {{ $orders->country }}, <br>
+                                    {{ $orders->country }} <br>
                                 </div>
                                 <label for="">Pin Code</label>
                                 <div class="border">{{ $orders->pincode }}</div>

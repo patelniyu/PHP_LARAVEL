@@ -33,11 +33,8 @@ class CartController extends Controller
                     $CartItem->prod_qty = $product_qty;
                     $CartItem->save();
                     return response()->json(['status' => $prod_check->name." Added To Cart"]);
-
                 }
             }
-
-
         }
         else
         {

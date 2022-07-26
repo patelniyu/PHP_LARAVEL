@@ -44,6 +44,29 @@ class CheckoutController extends Controller
         $order->country = $request->input('country');
         $order->pincode = $request->input('pincode');
 
+        $request->validate([
+            'fname' => 'required',
+            'lname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address1' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required',
+            'pincode' => 'required',
+
+        ],[
+                'fname.required' => 'Fname is required!!',
+                'lname.required' => 'Lname is required!!',
+                'email.required' => 'Email is required!!',
+                'phone.required' => 'Phone is required!!',
+                'address1.required' => 'Address1 is required!!',
+                'city.required' => 'City is required!!',
+                'state.required' => 'State is required!!',
+                'country.required' => 'Country is required!!',
+                'pincode.required' => 'Pincode is required!!',
+        ]);
+
         $total = 0;
         $cartitems_total = Cart::where('user_id', Auth::id())->get();
         foreach($cartitems_total as $prod)

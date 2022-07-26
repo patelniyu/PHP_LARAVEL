@@ -25,6 +25,32 @@ class ProductController extends Controller
     public function insert(Request $request)
     {
         $products = new Product();
+
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'small_description' => 'required',
+            'description' => 'required',
+            'original_price' => 'required',
+            'selling_price' => 'required',
+            'tax' => 'required',
+            'qty' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg,PNG,JPG,JPEG',
+
+
+        ],[
+                'name.required' => 'Name is required!!',
+                'slug.required' => 'Slug is required!!',
+                'small_description.required' => 'Small Description is required!!',
+                'description.required' => 'Description is required!!',
+                'original_price.required' => 'Original Price is required!!',
+                'selling_price.required' => 'Selling Price is required!!',
+                'tax.required' => 'Tax is required!!',
+                'qty.required' => 'Quantity is required!!',
+                'image.required' => 'Image is required!!',
+        ]);
+
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
@@ -33,6 +59,7 @@ class ProductController extends Controller
             $file->move('assets/uploads/products/',$filename);
             $products->image = $filename;
         }
+
         $products->cate_id = $request->input('cate_id');
         $products->name = $request->input('name');
         $products->slug = $request->input('slug');
@@ -95,7 +122,7 @@ class ProductController extends Controller
     {
         $products = Product::find($id);
         $path = 'assets/uploads/products/'.$products->image;
-        if(FIle::exists($path))
+        if(File::exists($path))
         {
             File::delete($path);
         }

@@ -68,6 +68,7 @@
                                 </button>
                             </div>
                         </div>
+                        <a href="{{ url('/') }}"></a>
                     </form>
                 </div>
             </div>

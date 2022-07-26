@@ -23,6 +23,20 @@ class CategoryController extends Controller
     public function insert(Request $request)
     {
         $category = new Category();
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg,PNG,JPG,JPEG',
+
+        ],[
+                'name.required' => 'Name is required!!',
+                'slug.required' => 'Slug is required!!',
+                'description.required' => 'Description is required!!',
+                'image.required' => 'Image is required!!',
+        ]);
+
         if($request->hasFile('image'))
         {
             $file = $request->file('image');

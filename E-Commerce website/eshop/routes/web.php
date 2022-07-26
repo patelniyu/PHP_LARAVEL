@@ -27,8 +27,10 @@ use App\Http\Controllers\Frontend\UserController;
 
 Route::get('/',[FrontController::class, 'index']);
 Route::get('category',[FrontController::class, 'category']);
-Route::get('view.category/{slug}',[FrontController::class, 'viewcategory']);
-Route::get('view.category/{cate_slug}/{prod_slug}',[FrontController::class, 'productview']);
+Route::get('view-category/{slug}',[FrontController::class, 'viewcategory']);
+Route::get('view-category/{cate_slug}/{prod_slug}',[FrontController::class, 'productview']);
+// Route::get('view-category/{slug}',[FrontController::class, 'viewcategory']);
+// Route::get('view-category/{cate_slug}/{prod_slug}',[FrontController::class, 'productview']);
 Route::post('add-to-cart',[CartController::class, 'addProduct']);
 Route::post('delete-cart-item',[CartController::class, 'deleteproduct']);
 Route::post('update-cart',[CartController::class, 'updatecart']);

@@ -34,7 +34,7 @@
                 <div class="owl-carousel feature-carousel owl-theme">
                     @foreach($trending_category as $tcategory)
                         <div class="item">
-                            <a href="{{ url('view.category/'.$tcategory->slug) }}">
+                            <a href="{{ url('view-category/'.$tcategory->slug) }}">
                                 <div class="card">
                                     <img src="{{ asset('assets/uploads/category/'.$tcategory->image) }}" alt="Product image">
                                     <div class="card-body">
@@ -56,7 +56,7 @@
 @section('scripts')
     <script>
         $('.feature-carousel').owlCarousel({
-            loop:true,
+            loop:false,
             margin:10,
             nav:true,
             dots:false,

@@ -12,14 +12,23 @@
                     <div class="col-md-6 mb-3">
                         <lable for="">Name</lable>
                         <input type="text"  class="form-control" name="name">
+                        @if ($errors->has('name'))
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                        @endif
                     </div>
                     <div class="col-md-6 mb-3">
                         <lable for="">Slug</lable>
                         <input type="text"  class="form-control" name="slug">
+                        @if ($errors->has('slug'))
+                            <span class="text-danger">{{ $errors->first('slug') }}</span>
+                        @endif
                     </div>
                     <div class="col-md-12 mb-3">
                         <lable for="">Description</lable>
-                        <textarea name="description" rows="3" class="form-control"></textarea> 
+                        <textarea name="description" rows="3" class="form-control"></textarea>
+                        @if ($errors->has('description'))
+                            <span class="text-danger">{{ $errors->first('description') }}</span>
+                        @endif
                     </div>
                     <div class="col-md-6 mb-3">
                         <lable for="">Status</lable>
@@ -43,6 +52,9 @@
                     </div>
                     <div class="col-md-12">
                         <input type="file" name="image" class="form-control">
+                        @if ($errors->has('image'))
+                            <span class="text-danger">{{ $errors->first('image') }}</span>
+                        @endif
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Submit</button>

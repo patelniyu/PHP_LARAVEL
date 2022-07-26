@@ -12,6 +12,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>My Orders</h4>
+                        <a href="{{ url('/') }}" class="btn btn-warning float-end">Back</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
